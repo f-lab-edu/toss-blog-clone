@@ -1,0 +1,25 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 92%;
+    height: 60px;
+    margin: 0 auto;
+}
+
+.header--logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header--menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
