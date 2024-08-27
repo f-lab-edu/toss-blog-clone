@@ -14,3 +14,7 @@
 
 # editor
 .idea
+
+# build
+dist/*
+!dist/index.html
