@@ -7,7 +7,19 @@ const __dirname = path.dirname(__filename);
 export default {
   entry: './src/index.mjs',
   output: {
-    filename: 'main.mjs',
+    filename: 'bundle.mjs',
     path: path.resolve(__dirname, 'dist'),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
+    ],
   },
 };
