@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 export default {
   mode: 'development',
   entry: {
-    index: './src/index.mjs',
+    index: './src/index.ts',
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -37,6 +37,13 @@ export default {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
       },
+      {
+        test: /\.ts?$/,
+        use: 'ts-loader',
+      },
     ],
+  },
+  resolve: {
+    extensions: ['.ts', '.mjs', '.js'],
   },
 };

@@ -1,13 +1,12 @@
-import join from 'lodash.join';
 import './style.css';
 import Icon from './icon.svg';
-import printMe from './print.mjs';
+import printMe from './print';
 
 function component() {
   const element = document.createElement('div');
   const btn = document.createElement('button');
 
-  element.innerHTML = join(['Hello11', 'webpack'], ' ');
+  element.innerHTML = 'hello';
   element.classList.add('hello');
 
   const myIcon = new Image();
