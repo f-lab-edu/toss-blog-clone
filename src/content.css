@@ -1,0 +1,38 @@
+.contents {
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    margin: 60px auto
+}
+
+.contents--title {
+    background-color: rgba(62, 62, 62, 0.64);
+    height: 130px;
+    margin: 24px 75px 40px;
+    border-radius: 10px;
+}
+
+.contents--container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.contents--main {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    padding: 0 24px;
+}
+
+.contents--aside {
+    display: flex;
+    flex-direction: column;
+    gap:24px;
+    width: 350px;
+    padding: 0 24px;
+}
+
+.menu {
+    display: flex;
+    gap: 25px;
+}
