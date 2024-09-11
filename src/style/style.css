@@ -1,6 +1,6 @@
 @font-face {
    font-family: "Noto Sans KR", sans-serif;
-   src: url('asset/fonts/noto-sans.ttf') format('ttf');
+   src: url('../asset/fonts/noto-sans.ttf') format('ttf');
    font-style: normal;
 }
 
