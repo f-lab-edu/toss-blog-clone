@@ -1,0 +1,12 @@
+@font-face {
+   font-family: "Noto Sans KR", sans-serif;
+   src: url('./noto-sans.ttf') format('ttf');
+   font-style: normal;
+}
+
+.hello {
+    color: red;
+    background: url("./icon.svg");
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 900;
+}
