@@ -13,7 +13,6 @@ abstract class View {
     }
 
     const container = this.target.cloneNode(true);
-
     const tempContainer = document.createElement('div');
     tempContainer.innerHTML = this.getTemplate();
 
