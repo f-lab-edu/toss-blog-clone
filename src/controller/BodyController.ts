@@ -2,7 +2,9 @@ import Controller from '../type/Controller';
 import BodyView from '../view/layout/BodyView';
 import ListView from '../view/ListView';
 import AsideListView from '../view/AsideListView';
-import { COMMENT_DUMMY, TAG_DUMMY, TRENDING_DUMMY } from '../dummy';
+import TrendModel from '../model/TrendModel';
+import CommentModel from '../model/CommentModel';
+import TagModel from '../model/TagModel';
 
 class BodyController extends Controller {
   private bodyView: BodyView;
@@ -10,6 +12,9 @@ class BodyController extends Controller {
   private trendingList: AsideListView;
   private recentCommentsList: AsideListView;
   private tagList: AsideListView;
+  private trendingData: TrendModel;
+  private commentData: CommentModel;
+  private tagData: TagModel;
 
   constructor(className: string) {
     super();
@@ -18,14 +23,20 @@ class BodyController extends Controller {
     this.trendingList = new AsideListView('.contents--aside');
     this.recentCommentsList = new AsideListView('.contents--aside');
     this.tagList = new AsideListView('.contents--aside');
+
+    this.trendingData = new TrendModel();
+    this.commentData = new CommentModel();
+    this.tagData= new TagModel();
   }
 
   render() {
     this.bodyView.render();
+
     this.listView.render();
-    this.trendingList.render({ title: "인기있는 글", type: "trend", data: TRENDING_DUMMY });
-    this.recentCommentsList.render({ title: "최근 댓글", type: "comment", data: COMMENT_DUMMY });
-    this.tagList.render({ title: "태그", type: "tag", data: TAG_DUMMY });
+
+    this.trendingList.render({ title: "인기있는 글", type: "trend", data: this.trendingData.getAll() });
+    this.recentCommentsList.render({ title: "최근 댓글", type: "comment", data: this.commentData.getAll() });
+    this.tagList.render({ title: "태그", type: "tag", data: this.tagData.getAll() });
   }
 }
 
