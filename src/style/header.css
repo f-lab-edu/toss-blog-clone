@@ -17,6 +17,11 @@
     align-items: center;
 }
 
+.logo {
+    width: 110px;
+    height: 60px;
+}
+
 .header--menu {
     display: flex;
     justify-content: center;
