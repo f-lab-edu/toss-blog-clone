@@ -5,6 +5,7 @@ import AsideListView from '../view/AsideListView';
 import TrendModel from '../model/TrendModel';
 import CommentModel from '../model/CommentModel';
 import TagModel from '../model/TagModel';
+import ListModel from '../model/ListModel';
 
 class BodyController extends Controller {
   private bodyView: BodyView;
@@ -15,6 +16,7 @@ class BodyController extends Controller {
   private trendingData: TrendModel;
   private commentData: CommentModel;
   private tagData: TagModel;
+  private listData: ListModel;
 
   constructor(className: string) {
     super();
@@ -26,13 +28,14 @@ class BodyController extends Controller {
 
     this.trendingData = new TrendModel();
     this.commentData = new CommentModel();
-    this.tagData= new TagModel();
+    this.tagData = new TagModel();
+    this.listData = new ListModel();
   }
 
   render() {
     this.bodyView.render();
 
-    this.listView.render();
+    this.listView.render({ data: this.listData.getAll() });
 
     this.trendingList.render({ title: "인기있는 글", type: "trend", data: this.trendingData.getAll() });
     this.recentCommentsList.render({ title: "최근 댓글", type: "comment", data: this.commentData.getAll() });
