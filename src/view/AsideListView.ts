@@ -7,11 +7,11 @@ interface AsideListViewProps {
 class AsideListView extends View<AsideListViewProps> {
   getTemplate({ title }:AsideListViewProps) {
     return `<article>
-          <span class="title">${title}</span>
-          <ul class="list">
-            <li>인기 글 아이템</li>
-          </ul>
-        </article>`;
+              <span class="title">${title}</span>
+              <ul class="list">
+                <li>인기 글 아이템</li>
+              </ul>
+            </article>`;
   }
 }
 
