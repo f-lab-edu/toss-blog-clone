@@ -6,12 +6,12 @@ import './style/button.css'
 import './style/link.css'
 import HeaderController from './controller/HeaderController';
 import BodyController from './controller/BodyController';
+import footerController from './controller/FooterController';
 
 
 window.requestAnimationFrame(() => {
-    // new LinkView('.contents--aside').render({ content: "홈페이지", href: "https://toss.im/" });
-
     // controller 렌더링
     new HeaderController('.main').init();
     new BodyController('.main').init();
+    new footerController('.main').init();
 })
