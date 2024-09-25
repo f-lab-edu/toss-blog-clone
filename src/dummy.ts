@@ -1,4 +1,4 @@
-import { CommentItem, TrendItem } from './view/AsideListView';
+import { CommentItem, ListItem, TrendItem } from './view/AsideListView';
 
 export const TRENDING_DUMMY: TrendItem[] = [{
   title: "비효율이 있는 곳엔 플랫폼 디자이너가 있다.",
@@ -19,3 +19,41 @@ export const COMMENT_DUMMY: CommentItem[] = [{
 }];
 
 export const TAG_DUMMY: string[] = ["Frontend", "Server", "Product Design", "Node.js", "Data", "DevOps"];
+
+export const LIST_DUMMY:ListItem[] = [{
+  title: "모닥불 | EP.4 오픈소스에...",
+  preview: `토스 합류까지 이어진 오픈소스 기여 경험, 궁금하지 않으세요? 토스 박찬혁, 고종현 님이 직접 전하는 토스 오픈소스에 기여 경험과 기술적 성장 이야기를 들어보세요!`,
+  createAt: "2024년 9월 4일",
+  team: "토스 프론트엔드 챕터",
+  tag: ["Frontend"],
+},{
+  title: "모닥불 | EP.4 오픈소스에...",
+  preview: `토스 합류까지 이어진 오픈소스 기여 경험, 궁금하지 않으세요? 토스 박찬혁, 고종현 님이 직접 전하는 토스 오픈소스에 기여 경험과 기술적 성장 이야기를 들어보세요!`,
+  createAt: "2024년 9월 4일",
+  team: "토스 프론트엔드 챕터",
+  tag: ["Frontend"],
+},{
+  title: "모닥불 | EP.4 오픈소스에...",
+  preview: `토스 합류까지 이어진 오픈소스 기여 경험, 궁금하지 않으세요? 토스 박찬혁, 고종현 님이 직접 전하는 토스 오픈소스에 기여 경험과 기술적 성장 이야기를 들어보세요!`,
+  createAt: "2024년 9월 4일",
+  team: "토스 프론트엔드 챕터",
+  tag: ["Frontend"],
+},{
+  title: "모닥불 | EP.4 오픈소스에...",
+  preview: `토스 합류까지 이어진 오픈소스 기여 경험, 궁금하지 않으세요? 토스 박찬혁, 고종현 님이 직접 전하는 토스 오픈소스에 기여 경험과 기술적 성장 이야기를 들어보세요!`,
+  createAt: "2024년 9월 4일",
+  team: "토스 프론트엔드 챕터",
+  tag: ["Frontend"],
+},{
+  title: "모닥불 | EP.4 오픈소스에...",
+  preview: `토스 합류까지 이어진 오픈소스 기여 경험, 궁금하지 않으세요? 토스 박찬혁, 고종현 님이 직접 전하는 토스 오픈소스에 기여 경험과 기술적 성장 이야기를 들어보세요!`,
+  createAt: "2024년 9월 4일",
+  team: "토스 프론트엔드 챕터",
+  tag: ["Frontend"],
+},{
+  title: "모닥불 | EP.4 오픈소스에...",
+  preview: `토스 합류까지 이어진 오픈소스 기여 경험, 궁금하지 않으세요? 토스 박찬혁, 고종현 님이 직접 전하는 토스 오픈소스에 기여 경험과 기술적 성장 이야기를 들어보세요!`,
+  createAt: "2024년 9월 4일",
+  team: "토스 프론트엔드 챕터",
+  tag: ["Frontend"],
+}]
