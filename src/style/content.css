@@ -37,6 +37,38 @@
     gap: 25px;
 }
 
+.menu > li {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 0 15px 0;
+}
+
+.list--item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.list--item:not(:last-child) {
+    border-bottom: 1px solid #000;
+    padding-bottom: 15px;
+}
+
+.list--title {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.list--preview {
+    font-size: 20px;
+}
+
 article > .title {
     font-weight: bold;
     font-size: 20px;
