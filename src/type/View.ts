@@ -1,13 +1,16 @@
 abstract class View<Props = undefined> {
-  private readonly target: Element | null;
+  private target?: Element | null;
+  private readonly className: string;
 
-  constructor(target: Element | null) {
-    this.target = target
+  constructor(target: string) {
+    this.className = target;
   }
 
   abstract getTemplate(props?: Props): string;
 
-  render(props?:Props) {
+  render(props?: Props) {
+    this.target = document.querySelector(this.className);
+
     if (!this.target) {
       throw Error('The target is not available.');
     }
