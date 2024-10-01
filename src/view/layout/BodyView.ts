@@ -12,4 +12,4 @@ class BodyView extends View {
   }
 }
 
-export default BodyView
+export default BodyView;

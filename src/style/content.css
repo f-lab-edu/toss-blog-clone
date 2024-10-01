@@ -1,100 +1,100 @@
 .contents {
-    display: flex;
-    flex-direction: column;
-    width: 1200px;
-    margin: 60px auto
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  margin: 60px auto;
 }
 
 .contents--title {
-    background-color: rgba(62, 62, 62, 0.64);
-    height: 130px;
-    margin: 24px 75px 40px;
-    border-radius: 10px;
+  background-color: rgba(62, 62, 62, 0.64);
+  height: 130px;
+  margin: 24px 75px 40px;
+  border-radius: 10px;
 }
 
 .contents--container {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .contents--main {
-    display: flex;
-    flex-direction: column;
-    width: 700px;
-    padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  padding: 0 24px;
 }
 
 .contents--aside {
-    display: flex;
-    flex-direction: column;
-    gap:24px;
-    width: 350px;
-    padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 350px;
+  padding: 0 24px;
 }
 
 .menu {
-    display: flex;
-    gap: 25px;
+  display: flex;
+  gap: 25px;
 }
 
 .menu > li {
-    font-weight: bold;
-    font-size: 20px;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 15px 0 15px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px 0 15px 0;
 }
 
 .list--item {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .list--item:not(:last-child) {
-    border-bottom: 1px solid #000;
-    padding-bottom: 15px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 15px;
 }
 
 .list--title {
-    font-weight: bold;
-    font-size: 25px;
+  font-weight: bold;
+  font-size: 25px;
 }
 
 .list--preview {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 article > .title {
-    font-weight: bold;
-    font-size: 20px;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .aside-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 15px 0 15px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px 0 15px 0;
 }
 
 .aside-list--item {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .aside-list--item:not(:last-child) {
-    border-bottom: 1px solid #000;
-    padding-bottom: 15px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 15px;
 }
 
 .aside-tag {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    padding: 15px 0 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 15px 0 15px 0;
 }

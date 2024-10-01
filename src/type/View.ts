@@ -30,4 +30,4 @@ abstract class View<Props = undefined> {
   }
 }
 
-export default View
+export default View;

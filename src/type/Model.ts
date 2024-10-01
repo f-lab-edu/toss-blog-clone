@@ -26,4 +26,4 @@ class Model<T> {
   }
 }
 
-export default Model
+export default Model;

@@ -21,7 +21,7 @@ class BodyController extends Controller {
   constructor(className: string) {
     super();
     this.bodyView = new BodyView(className);
-    this.listView = new ListView(".contents--main");
+    this.listView = new ListView('.contents--main');
     this.trendingList = new AsideListView('.contents--aside');
     this.recentCommentsList = new AsideListView('.contents--aside');
     this.tagList = new AsideListView('.contents--aside');
@@ -37,10 +37,22 @@ class BodyController extends Controller {
 
     this.listView.render({ data: this.listData.getAll() });
 
-    this.trendingList.render({ title: "인기있는 글", type: "trend", data: this.trendingData.getAll() });
-    this.recentCommentsList.render({ title: "최근 댓글", type: "comment", data: this.commentData.getAll() });
-    this.tagList.render({ title: "태그", type: "tag", data: this.tagData.getAll() });
+    this.trendingList.render({
+      title: '인기있는 글',
+      type: 'trend',
+      data: this.trendingData.getAll(),
+    });
+    this.recentCommentsList.render({
+      title: '최근 댓글',
+      type: 'comment',
+      data: this.commentData.getAll(),
+    });
+    this.tagList.render({
+      title: '태그',
+      type: 'tag',
+      data: this.tagData.getAll(),
+    });
   }
 }
 
-export default BodyController
+export default BodyController;

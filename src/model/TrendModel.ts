@@ -5,8 +5,8 @@ import { TrendItem } from '../view/AsideListView';
 class TrendModel extends Model<TrendItem> {
   constructor() {
     super();
-    this.data = TRENDING_DUMMY
+    this.data = TRENDING_DUMMY;
   }
 }
 
-export default TrendModel
+export default TrendModel;

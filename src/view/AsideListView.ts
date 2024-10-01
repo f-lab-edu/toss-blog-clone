@@ -1,6 +1,6 @@
 import View from '../type/View';
 
-type ListType = "trend" | "comment" | "tag"
+type ListType = 'trend' | 'comment' | 'tag';
 
 export interface TrendItem {
   title: string;
@@ -16,11 +16,11 @@ export interface CommentItem {
 type ListData = TrendItem[] | CommentItem[] | string[];
 
 export interface ListItem {
-  title: string,
-  preview: string,
-  createAt: string,
-  team: string,
-  tag: string[],
+  title: string;
+  preview: string;
+  createAt: string;
+  team: string;
+  tag: string[];
 }
 
 interface AsideListViewProps {
@@ -32,35 +32,47 @@ interface AsideListViewProps {
 class AsideListView extends View<AsideListViewProps> {
   getTrendTemplate(data: TrendItem[]) {
     return `<div class="aside-list">
-              ${data.map((item) => `
+              ${data
+                .map(
+                  (item) => `
                 <div class="aside-list--item">
                   <div>${item.title}</div>
                   <div>${item.author}</div>
                 </div>
-              `).join('')}
-            </div>`
+              `,
+                )
+                .join('')}
+            </div>`;
   }
 
   getCommentTemplate(data: CommentItem[]) {
     return `<div class="aside-list">
-              ${data.map((item) => `
+              ${data
+                .map(
+                  (item) => `
                 <div class="aside-list--item">
                   <div>${item.title}</div>
                   <div>${item.comment}</div>
                   <div>${item.post}</div>
                 </div>
-              `).join('')}
-            </div>`
+              `,
+                )
+                .join('')}
+            </div>`;
   }
 
   getTagTemplate(data: string[]) {
     return `<div class="aside-tag">
-              ${data.map((item) => `
+              ${data
+                .map(
+                  (item) => `
                 <div class="aside-tag--item">
                   ${item}
                 </div>
-              `).join('')}
-            </div>`
+              `,
+                )
+                .join('')}
+            </div>`;
   }
 
   getItemTemplate(type: ListType, data: ListData) {
@@ -76,8 +88,8 @@ class AsideListView extends View<AsideListViewProps> {
     }
   }
 
-  getTemplate({ title, type, data }:AsideListViewProps) {
-    const ItemTemplate = this.getItemTemplate(type, data)
+  getTemplate({ title, type, data }: AsideListViewProps) {
+    const ItemTemplate = this.getItemTemplate(type, data);
 
     return `<article>
               <span class="title">${title}</span>

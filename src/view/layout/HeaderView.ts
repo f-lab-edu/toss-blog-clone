@@ -1,5 +1,5 @@
 import View from '../../type/View';
-import logo from '../../asset/images/logo.svg'
+import logo from '../../asset/images/logo.svg';
 
 class HeaderView extends View {
   getTemplate() {
@@ -12,4 +12,4 @@ class HeaderView extends View {
   }
 }
 
-export default HeaderView
+export default HeaderView;

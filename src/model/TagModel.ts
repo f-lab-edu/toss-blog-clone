@@ -4,8 +4,8 @@ import { TAG_DUMMY } from '../dummy';
 class TagModel extends Model<string> {
   constructor() {
     super();
-    this.data = TAG_DUMMY
+    this.data = TAG_DUMMY;
   }
 }
 
-export default TagModel
+export default TagModel;

@@ -5,8 +5,8 @@ import { CommentItem } from '../view/AsideListView';
 class CommentModel extends Model<CommentItem> {
   constructor() {
     super();
-    this.data = COMMENT_DUMMY
+    this.data = COMMENT_DUMMY;
   }
 }
 
-export default CommentModel
+export default CommentModel;

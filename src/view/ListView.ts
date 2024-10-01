@@ -2,17 +2,21 @@ import View from '../type/View';
 import { ListItem } from './AsideListView';
 
 interface ListViewProps {
-  data: ListItem[]
+  data: ListItem[];
 }
 
 class ListView extends View<ListViewProps> {
   getListItemTemplate(data: ListItem[]) {
     return `<div class="list">
-              ${data.map((item) => `<div class="list--item">
+              ${data
+                .map(
+                  (item) => `<div class="list--item">
                 <div class="list--title">${item.title}</div>
                 <div class="list--preview">${item.preview}</div>
                 <div>${item.createAt} - ${item.team}</div>
-              </div>`).join('')}
+              </div>`,
+                )
+                .join('')}
             </div>`;
   }
 
