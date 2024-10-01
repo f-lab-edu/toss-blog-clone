@@ -30,6 +30,14 @@ interface AsideListViewProps {
 }
 
 class AsideListView extends View<AsideListViewProps> {
+  bindTagClick(handler: EventListener) {
+    const asideTag = document.querySelector('.aside-tag');
+
+    if (asideTag) {
+      asideTag.addEventListener('click', handler);
+    }
+  }
+
   getTrendTemplate(data: TrendItem[]) {
     return `<div class="aside-list">
               ${data
@@ -66,7 +74,7 @@ class AsideListView extends View<AsideListViewProps> {
               ${data
                 .map(
                   (item) => `
-                <div class="aside-tag--item">
+                <div class="aside-tag--item" data-tag="${item}">
                   ${item}
                 </div>
               `,
