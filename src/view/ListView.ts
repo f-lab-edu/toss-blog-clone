@@ -21,7 +21,7 @@ class ListView extends View<ListViewProps> {
   }
 
   getTemplate({ data }: ListViewProps) {
-    return `<div>
+    return `<div data-key="main-list">
               <ul class="menu"> 
                 <li>전체</li> 
                 <li>개발</li> 

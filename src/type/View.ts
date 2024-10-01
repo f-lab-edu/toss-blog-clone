@@ -18,15 +18,25 @@ abstract class View<Props = undefined> {
       throw Error('The target is not available.');
     }
 
-    const container = this.target.cloneNode(true);
+    const container = this.target.cloneNode(true) as HTMLElement;
     const tempContainer = document.createElement('div');
     tempContainer.innerHTML = this.getTemplate(props);
 
-    if (!tempContainer.firstChild) {
+    const newElement = tempContainer.firstChild as HTMLElement;
+
+    if (!newElement) {
       throw Error('The element to render is not available.');
     }
 
-    container.appendChild(tempContainer.firstChild);
+    const newElementKey = newElement.dataset.key;
+    const oldElement = container.querySelector(`[data-key="${newElementKey}"]`);
+
+    if (oldElement) {
+      container.replaceChild(newElement, oldElement);
+    } else {
+      container.appendChild(newElement);
+    }
+
     this.target.replaceWith(container);
     this.eventBinding();
   }

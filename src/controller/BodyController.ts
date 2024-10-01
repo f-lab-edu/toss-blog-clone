@@ -55,6 +55,8 @@ class BodyController extends Controller {
       } else {
         this.selectedTag.push(tag);
       }
+
+      this.listView.render({ data: this.listData.getAll() });
     }
   }
 
