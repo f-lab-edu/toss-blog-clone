@@ -56,14 +56,18 @@ class BodyController extends Controller {
         this.selectedTag.push(tag);
       }
 
-      this.listView.render({ data: this.listData.getAll() });
+      this.listView.render({
+        data: this.listData.getList(this.selectedCategory, this.selectedTag),
+      });
     }
   }
 
   render() {
     this.bodyView.render();
 
-    this.listView.render({ data: this.listData.getAll() });
+    this.listView.render({
+      data: this.listData.getList(this.selectedCategory, this.selectedTag),
+    });
 
     this.trendingList.render({
       title: '인기있는 글',
