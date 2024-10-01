@@ -6,6 +6,9 @@ import TrendModel from '../model/TrendModel';
 import CommentModel from '../model/CommentModel';
 import TagModel from '../model/TagModel';
 import ListModel from '../model/ListModel';
+import { isHTMLElement } from '../validation';
+
+type Category = 'all' | 'develop' | 'design';
 
 class BodyController extends Controller {
   private bodyView: BodyView;
@@ -17,6 +20,8 @@ class BodyController extends Controller {
   private commentData: CommentModel;
   private tagData: TagModel;
   private listData: ListModel;
+  private selectedTag: string[];
+  private selectedCategory: Category;
 
   constructor(className: string) {
     super();
@@ -30,6 +35,27 @@ class BodyController extends Controller {
     this.commentData = new CommentModel();
     this.tagData = new TagModel();
     this.listData = new ListModel();
+
+    // TODO: 추후 query String 또는 URL 값을 통해 처리 필요
+    this.selectedCategory = 'all';
+    this.selectedTag = [];
+  }
+
+  eventBinding() {
+    this.tagList.bindTagClick(this.tagClickHandler.bind(this));
+  }
+
+  tagClickHandler({ target }: Event) {
+    if (isHTMLElement(target) && target.classList.contains('aside-tag--item')) {
+      const tag = target.dataset.tag as string;
+      const index = this.selectedTag.indexOf(tag);
+
+      if (index > -1) {
+        this.selectedTag.splice(index, 1);
+      } else {
+        this.selectedTag.push(tag);
+      }
+    }
   }
 
   render() {
