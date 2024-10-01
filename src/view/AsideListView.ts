@@ -1,4 +1,5 @@
 import View from '../type/View';
+import { Category } from '../controller/BodyController';
 
 type ListType = 'trend' | 'comment' | 'tag';
 
@@ -21,6 +22,7 @@ export interface ListItem {
   createAt: string;
   team: string;
   tag: string[];
+  category: Category;
 }
 
 interface AsideListViewProps {

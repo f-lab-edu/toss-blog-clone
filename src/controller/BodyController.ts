@@ -8,7 +8,7 @@ import TagModel from '../model/TagModel';
 import ListModel from '../model/ListModel';
 import { isHTMLElement } from '../validation';
 
-type Category = 'all' | 'develop' | 'design';
+export type Category = 'all' | 'develop' | 'design';
 
 class BodyController extends Controller {
   private bodyView: BodyView;
