@@ -8,6 +8,9 @@ abstract class View<Props = undefined> {
 
   abstract getTemplate(props?: Props): string;
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  eventBinding() {}
+
   render(props?: Props) {
     this.target = document.querySelector(this.className);
 
@@ -25,8 +28,7 @@ abstract class View<Props = undefined> {
 
     container.appendChild(tempContainer.firstChild);
     this.target.replaceWith(container);
-
-    // this.eventBinding && this.eventBinding();
+    this.eventBinding();
   }
 }
 
