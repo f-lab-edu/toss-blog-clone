@@ -2,7 +2,7 @@ import View from '../../type/View';
 
 class BodyView extends View {
   getTemplate() {
-    return `<div class="contents">
+    return `<div class="contents" data-key="contents">
               <section class="contents--title"></section>
               <section class="contents--container">
                 <main class="contents--main"></main>

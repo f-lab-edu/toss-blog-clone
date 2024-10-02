@@ -2,7 +2,7 @@ import { Route } from '../router';
 
 abstract class Controller {
   public className: string;
-  public route: object | undefined;
+  public route: Route | undefined;
 
   protected constructor(className: string, route?: Route) {
     this.className = className;

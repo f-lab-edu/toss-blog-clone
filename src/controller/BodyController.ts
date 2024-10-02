@@ -46,6 +46,7 @@ class BodyController extends Controller {
 
   eventBinding() {
     this.tagList.bindTagClick(this.tagClickHandler.bind(this));
+    this.listView.bindTabClick(this.tabClickHandler.bind(this));
   }
 
   tagClickHandler({ target }: Event) {
@@ -62,6 +63,14 @@ class BodyController extends Controller {
       this.listView.render({
         data: this.listData.getList(this.selectedCategory, this.selectedTag),
       });
+    }
+  }
+
+  tabClickHandler({ target }: Event) {
+    if (isHTMLElement(target) && target.tagName === 'LI') {
+      const tag = target.dataset.tab as string;
+
+      this.route?.push(`/${tag}`);
     }
   }
 

@@ -6,6 +6,14 @@ interface ListViewProps {
 }
 
 class ListView extends View<ListViewProps> {
+  bindTabClick(handler: EventListener) {
+    const tab = document.querySelector('.menu');
+
+    if (tab) {
+      tab.addEventListener('click', handler);
+    }
+  }
+
   getListItemTemplate(data: ListItem[]) {
     return `<div class="list">
               ${data
@@ -23,9 +31,9 @@ class ListView extends View<ListViewProps> {
   getTemplate({ data }: ListViewProps) {
     return `<div data-key="main-list">
               <ul class="menu"> 
-                <li>전체</li> 
-                <li>개발</li> 
-                <li>디자인</li> 
+                <li data-tab="all">전체</li> 
+                <li data-tab="develop">개발</li> 
+                <li data-tab="design">디자인</li> 
               </ul> 
               ${this.getListItemTemplate(data)}
             </div>`;

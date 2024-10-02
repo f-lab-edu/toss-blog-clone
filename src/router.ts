@@ -11,7 +11,7 @@ interface InitRoute {
 }
 
 export interface Route {
-  push: () => void;
+  push: (path: string) => void;
   replace: () => void;
   query: object;
 }
@@ -27,8 +27,9 @@ export const createRouter = (init: InitRoute[]) => {
   document.addEventListener('popstate', routeCheck);
   routeCheck();
 
-  function push() {
-    console.log('page push');
+  function push(path: string) {
+    window.history.pushState({}, '', path);
+    routeCheck();
   }
 
   function replace() {
