@@ -36,3 +36,33 @@
     display: flex;
     gap: 25px;
 }
+
+article > .title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.aside-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 0 15px 0;
+}
+
+.aside-list--item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.aside-list--item:not(:last-child) {
+    border-bottom: 1px solid #000;
+    padding-bottom: 15px;
+}
+
+.aside-tag {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px 0 15px 0;
+}
