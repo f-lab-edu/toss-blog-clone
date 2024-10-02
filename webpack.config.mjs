@@ -12,6 +12,7 @@ export default {
   },
   devtool: 'inline-source-map',
   devServer: {
+    historyApiFallback: true,
     static: './dist',
   },
   plugins: [
@@ -23,6 +24,7 @@ export default {
     filename: '[name].bundle.mjs',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
+    publicPath: '/',
   },
   optimization: {
     runtimeChunk: 'single',
