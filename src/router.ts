@@ -5,9 +5,14 @@ type ControllerConstructor = new (
   route: Route,
 ) => Controller;
 
+interface Page {
+  page: ControllerConstructor;
+  target: string;
+}
+
 interface InitRoute {
   path: string;
-  page: ControllerConstructor[];
+  page: Page[];
 }
 
 export interface Route {
@@ -63,8 +68,8 @@ export const createRouter = (init: InitRoute[]) => {
       }
     });
 
-    route.page.forEach((Page) => {
-      const page = new Page('.main', { push, replace, query });
+    route.page.forEach(({ page: Page, target }) => {
+      const page = new Page(target, { push, replace, query });
       page.init();
     });
   }

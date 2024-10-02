@@ -15,8 +15,12 @@ abstract class Controller {
   eventBinding() {}
 
   init() {
-    this.render();
-    this.eventBinding();
+    const container = document.querySelector(this.className);
+    if (container) {
+      container.innerHTML = '';
+      this.render();
+      this.eventBinding();
+    }
   }
 }
 
