@@ -28,7 +28,7 @@ const pathToRegex = (path: string) => {
 
 export const createRouter = (init: InitRoute[]) => {
   let query: Record<string, string> = {};
-  document.addEventListener('popstate', routeCheck);
+  window.addEventListener('popstate', routeCheck);
   routeCheck();
 
   function push(path: string) {
