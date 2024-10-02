@@ -6,24 +6,25 @@ import './style/button.css';
 import './style/link.css';
 import BodyController from './controller/BodyController';
 import { createRouter } from './router';
-
-createRouter([
-  {
-    path: '/',
-    page: [{ page: BodyController, target: '.main' }],
-  },
-  {
-    path: '/:category',
-    page: [{ page: BodyController, target: '.main' }],
-  },
-  {
-    path: '/article/:title',
-    page: [{ page: BodyController, target: '.main' }],
-  },
-]);
+import HeaderController from './controller/HeaderController';
+import footerController from './controller/FooterController';
 
 window.requestAnimationFrame(() => {
-  // controller 렌더링
-  //new HeaderController('.main').init();
-  //new footerController('.main').init();
+  new HeaderController('.header').init();
+  new footerController('.footer').init();
+
+  createRouter([
+    {
+      path: '/',
+      page: [{ page: BodyController, target: '.content' }],
+    },
+    {
+      path: '/:category',
+      page: [{ page: BodyController, target: '.content' }],
+    },
+    {
+      path: '/article/:title',
+      page: [{ page: BodyController, target: '.content' }],
+    },
+  ]);
 });

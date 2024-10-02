@@ -17,7 +17,6 @@ interface InitRoute {
 
 export interface Route {
   push: (path: string) => void;
-  replace: () => void;
   query: object;
 }
 
@@ -35,10 +34,6 @@ export const createRouter = (init: InitRoute[]) => {
   function push(path: string) {
     window.history.pushState({}, '', path);
     routeCheck();
-  }
-
-  function replace() {
-    console.log('page replace');
   }
 
   function routeCheck() {
@@ -69,7 +64,7 @@ export const createRouter = (init: InitRoute[]) => {
     });
 
     route.page.forEach(({ page: Page, target }) => {
-      const page = new Page(target, { push, replace, query });
+      const page = new Page(target, { push, query });
       page.init();
     });
   }
