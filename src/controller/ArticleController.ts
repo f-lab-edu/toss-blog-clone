@@ -6,7 +6,7 @@ import ArticleView from '../view/ArticleView';
 class ArticleController extends Controller {
   private articleView: ArticleView;
   private listData: ListModel;
-  private keyword: string;
+  private readonly keyword: string;
 
   constructor(className: string, route?: Route) {
     super(className, route);
@@ -17,7 +17,6 @@ class ArticleController extends Controller {
   }
 
   render() {
-    console.log(this.keyword);
     const articleData = this.listData.getItem(this.keyword);
 
     if (articleData) {

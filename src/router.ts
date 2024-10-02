@@ -48,7 +48,6 @@ export const createRouter = (init: InitRoute[]) => {
     });
 
     if (!route) {
-      // TODO: 404 Error
       return new Error('Not Found Page');
     }
 
