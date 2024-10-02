@@ -1,8 +1,19 @@
 import Controller from './type/Controller';
 
+type ControllerConstructor = new (
+  className: string,
+  route: Route,
+) => Controller;
+
 interface InitRoute {
   path: string;
-  page: Controller[];
+  page: ControllerConstructor[];
+}
+
+export interface Route {
+  push: () => void;
+  replace: () => void;
+  query: object;
 }
 
 const pathToRegex = (path: string) => {
@@ -15,6 +26,14 @@ export const createRouter = (init: InitRoute[]) => {
   let query: Record<string, string> = {};
   document.addEventListener('popstate', routeCheck);
   routeCheck();
+
+  function push() {
+    console.log('page push');
+  }
+
+  function replace() {
+    console.log('page replace');
+  }
 
   function routeCheck() {
     let match: RegExpMatchArray | null = null;
@@ -43,16 +62,9 @@ export const createRouter = (init: InitRoute[]) => {
       }
     });
 
-    route.page.forEach((page) => page.init());
+    route.page.forEach((Page) => {
+      const page = new Page('.main', { push, replace, query });
+      page.init();
+    });
   }
-
-  function push() {
-    console.log('page push');
-  }
-
-  function replace() {
-    console.log('page replace');
-  }
-
-  return { push, replace, query };
 };

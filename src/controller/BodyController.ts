@@ -7,6 +7,7 @@ import CommentModel from '../model/CommentModel';
 import TagModel from '../model/TagModel';
 import ListModel from '../model/ListModel';
 import { isHTMLElement } from '../validation';
+import { Route } from '../router';
 
 export type Category = 'all' | 'develop' | 'design';
 
@@ -23,8 +24,9 @@ class BodyController extends Controller {
   private selectedTag: string[];
   private selectedCategory: Category;
 
-  constructor(className: string) {
-    super();
+  constructor(className: string, route?: Route) {
+    super(className, route);
+
     this.bodyView = new BodyView(className);
     this.listView = new ListView('.contents--main');
     this.trendingList = new AsideListView('.contents--aside');
@@ -37,7 +39,8 @@ class BodyController extends Controller {
     this.listData = new ListModel();
 
     // TODO: 추후 query String 또는 URL 값을 통해 처리 필요
-    this.selectedCategory = 'all';
+    const category = (route?.query as { category: Category }).category;
+    this.selectedCategory = category ?? 'all';
     this.selectedTag = [];
   }
 

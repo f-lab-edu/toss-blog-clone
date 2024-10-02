@@ -1,6 +1,7 @@
 import Controller from '../type/Controller';
 import FooterView from '../view/layout/FooterView';
 import LinkView from '../view/LinkView';
+import { Route } from '../router';
 
 class FooterController extends Controller {
   private footerView: FooterView;
@@ -9,8 +10,8 @@ class FooterController extends Controller {
   private careerLinkView: LinkView;
   private faqLinkView: LinkView;
 
-  constructor(className: string) {
-    super();
+  constructor(className: string, route?: Route) {
+    super(className, route);
     this.footerView = new FooterView(className);
 
     this.homeLinkView = new LinkView('.footer--link_group');
