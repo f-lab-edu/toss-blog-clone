@@ -15,6 +15,14 @@ export interface CommentItem {
 
 type ListData = TrendItem[] | CommentItem[] | string[];
 
+export interface ListItem {
+  title: string,
+  preview: string,
+  createAt: string,
+  team: string,
+  tag: string[],
+}
+
 interface AsideListViewProps {
   title: string;
   type: ListType;
