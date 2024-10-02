@@ -17,6 +17,7 @@ export interface CommentItem {
 type ListData = TrendItem[] | CommentItem[] | string[];
 
 export interface ListItem {
+  keyword: string;
   title: string;
   preview: string;
   createAt: string;
