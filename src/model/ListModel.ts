@@ -24,8 +24,13 @@ class ListModel extends Model<ListItem> {
       );
     }
 
-    console.log(tempData, tags, category);
     return tempData;
+  }
+
+  getItem(keyword: string) {
+    const tempData = this.getAll();
+
+    return tempData.find((data) => data.keyword === keyword);
   }
 }
 

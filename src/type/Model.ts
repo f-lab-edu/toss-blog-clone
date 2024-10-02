@@ -8,22 +8,6 @@ class Model<T> {
 
     return this.data;
   }
-
-  getFirst() {
-    if (!this.data || this.data[0]) {
-      throw Error('No data available');
-    }
-
-    return this.data[0];
-  }
-
-  getSelect(key: number) {
-    if (!this.data || this.data[key]) {
-      throw Error('No data available');
-    }
-
-    return this.data[key];
-  }
 }
 
 export default Model;

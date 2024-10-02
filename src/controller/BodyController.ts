@@ -21,8 +21,8 @@ class BodyController extends Controller {
   private commentData: CommentModel;
   private tagData: TagModel;
   private listData: ListModel;
-  private selectedTag: string[];
-  private selectedCategory: Category;
+  private readonly selectedTag: string[];
+  private readonly selectedCategory: Category;
 
   constructor(className: string, route?: Route) {
     super(className, route);
@@ -38,7 +38,6 @@ class BodyController extends Controller {
     this.tagData = new TagModel();
     this.listData = new ListModel();
 
-    // TODO: 추후 query String 또는 URL 값을 통해 처리 필요
     const category = (route?.query as { category: Category }).category;
     this.selectedCategory = category ?? 'all';
     this.selectedTag = [];
@@ -47,6 +46,7 @@ class BodyController extends Controller {
   eventBinding() {
     this.tagList.bindTagClick(this.tagClickHandler.bind(this));
     this.listView.bindTabClick(this.tabClickHandler.bind(this));
+    this.listView.bindListClick(this.listClickHandler.bind(this));
   }
 
   tagClickHandler({ target }: Event) {
@@ -72,13 +72,23 @@ class BodyController extends Controller {
     }
   }
 
+  listClickHandler({ target }: Event) {
+    if (isHTMLElement(target)) {
+      const parentContainer = target.closest('.list--item');
+
+      if (isHTMLElement(parentContainer) && parentContainer) {
+        const keyword = parentContainer.dataset.keyword as string;
+        this.route?.push(`/article/${keyword}`);
+      }
+    }
+  }
+
   render() {
     this.bodyView.render();
 
     this.listView.render({
       data: this.listData.getList(this.selectedCategory, this.selectedTag),
     });
-
     this.trendingList.render({
       title: '인기있는 글',
       type: 'trend',

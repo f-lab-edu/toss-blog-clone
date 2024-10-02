@@ -14,11 +14,21 @@ class ListView extends View<ListViewProps> {
     }
   }
 
+  bindListClick(handler: EventListener) {
+    const list = document.querySelector('.list');
+
+    if (list) {
+      list.addEventListener('click', handler);
+    }
+  }
+
   getListItemTemplate(data: ListItem[]) {
     return `<div class="list">
               ${data
                 .map(
-                  (item) => `<div class="list--item">
+                  (
+                    item,
+                  ) => `<div class="list--item" data-keyword="${item.keyword}">
                 <div class="list--title">${item.title}</div>
                 <div class="list--preview">${item.preview}</div>
                 <div>${item.createAt} - ${item.team}</div>

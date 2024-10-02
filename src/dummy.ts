@@ -35,6 +35,7 @@ export const TAG_DUMMY: string[] = [
 
 export const LIST_DUMMY: ListItem[] = [
   {
+    keyword: 'test1',
     title: 'Tag: Frontend, Category: Develop',
     preview: `토스 합류까지 이어진 오픈소스 기여 경험, 궁금하지 않으세요? 토스 박찬혁, 고종현 님이 직접 전하는 토스 오픈소스에 기여 경험과 기술적 성장 이야기를 들어보세요!`,
     createAt: '2024년 9월 4일',
@@ -43,6 +44,7 @@ export const LIST_DUMMY: ListItem[] = [
     category: 'develop',
   },
   {
+    keyword: 'test2',
     title: 'Tag: Frontend | Node.js, Category: Develop',
     preview: `토스 합류까지 이어진 오픈소스 기여 경험, 궁금하지 않으세요? 토스 박찬혁, 고종현 님이 직접 전하는 토스 오픈소스에 기여 경험과 기술적 성장 이야기를 들어보세요!`,
     createAt: '2024년 9월 4일',
@@ -51,6 +53,7 @@ export const LIST_DUMMY: ListItem[] = [
     category: 'develop',
   },
   {
+    keyword: 'test3',
     title: 'Tag: Node.js, Category: Develop',
     preview: `토스 합류까지 이어진 오픈소스 기여 경험, 궁금하지 않으세요? 토스 박찬혁, 고종현 님이 직접 전하는 토스 오픈소스에 기여 경험과 기술적 성장 이야기를 들어보세요!`,
     createAt: '2024년 9월 4일',
@@ -59,6 +62,7 @@ export const LIST_DUMMY: ListItem[] = [
     category: 'develop',
   },
   {
+    keyword: 'test4',
     title: 'Tag: Frontend, Category: Design',
     preview: `토스 합류까지 이어진 오픈소스 기여 경험, 궁금하지 않으세요? 토스 박찬혁, 고종현 님이 직접 전하는 토스 오픈소스에 기여 경험과 기술적 성장 이야기를 들어보세요!`,
     createAt: '2024년 9월 4일',
@@ -67,6 +71,7 @@ export const LIST_DUMMY: ListItem[] = [
     category: 'design',
   },
   {
+    keyword: 'test5',
     title: 'Tag: Data, Category: Design',
     preview: `토스 합류까지 이어진 오픈소스 기여 경험, 궁금하지 않으세요? 토스 박찬혁, 고종현 님이 직접 전하는 토스 오픈소스에 기여 경험과 기술적 성장 이야기를 들어보세요!`,
     createAt: '2024년 9월 4일',
@@ -75,6 +80,7 @@ export const LIST_DUMMY: ListItem[] = [
     category: 'design',
   },
   {
+    keyword: 'test6',
     title: 'Tag: Frontend | Data, Category: Design',
     preview: `토스 합류까지 이어진 오픈소스 기여 경험, 궁금하지 않으세요? 토스 박찬혁, 고종현 님이 직접 전하는 토스 오픈소스에 기여 경험과 기술적 성장 이야기를 들어보세요!`,
     createAt: '2024년 9월 4일',
