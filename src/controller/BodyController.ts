@@ -47,6 +47,7 @@ class BodyController extends Controller {
   eventBinding() {
     this.tagList.bindTagClick(this.tagClickHandler.bind(this));
     this.listView.bindTabClick(this.tabClickHandler.bind(this));
+    this.listView.bindListClick(this.listClickHandler.bind(this));
   }
 
   tagClickHandler({ target }: Event) {
@@ -69,6 +70,17 @@ class BodyController extends Controller {
       const tag = target.dataset.tab as string;
 
       this.route?.push(`/${tag}`);
+    }
+  }
+
+  listClickHandler({ target }: Event) {
+    if (isHTMLElement(target)) {
+      const parentContainer = target.closest('.list--item');
+
+      if (isHTMLElement(parentContainer) && parentContainer) {
+        const keyword = parentContainer.dataset.keyword as string;
+        this.route?.push(`/article/${keyword}`);
+      }
     }
   }
 

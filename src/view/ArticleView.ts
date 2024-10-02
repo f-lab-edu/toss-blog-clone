@@ -13,7 +13,7 @@ class ArticleView extends View<ArticleViewProps> {
                 <p class="article--title">${data.title}</p>
                 
                 <div class="article--tags">
-                  ${data.tag.map((item) => `<div class="article--tag">#${item}</div>`)}  
+                  ${data.tag.map((item) => `<div class="article--tag">#${item}</div>`).join('')}  
                 </div>
                 
                 <div class="article--info">
