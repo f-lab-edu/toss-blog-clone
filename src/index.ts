@@ -7,10 +7,31 @@ import './style/link.css';
 import HeaderController from './controller/HeaderController';
 import BodyController from './controller/BodyController';
 import footerController from './controller/FooterController';
+import { createRouter } from './router';
+
+const router = createRouter([
+  {
+    path: '/',
+    page: [new BodyController('.main')],
+  },
+  {
+    path: '/develop',
+    page: [new BodyController('.main')],
+  },
+  {
+    path: '/design',
+    page: [new BodyController('.main')],
+  },
+  {
+    path: '/article/:title/:title1',
+    page: [new BodyController('.main')],
+  },
+]);
+
+console.log(router);
 
 window.requestAnimationFrame(() => {
   // controller 렌더링
   new HeaderController('.main').init();
-  new BodyController('.main').init();
   new footerController('.main').init();
 });
