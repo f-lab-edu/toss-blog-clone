@@ -28,15 +28,7 @@ abstract class View<Props = undefined> {
       throw Error('The element to render is not available.');
     }
 
-    const newElementKey = newElement.dataset.key;
-    const oldElement = container.querySelector(`[data-key="${newElementKey}"]`);
-
-    if (oldElement) {
-      container.replaceChild(newElement, oldElement);
-    } else {
-      container.appendChild(newElement);
-    }
-
+    container.appendChild(newElement);
     this.target.replaceWith(container);
     this.eventBinding();
   }
